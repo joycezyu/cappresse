@@ -202,10 +202,12 @@ class NmpcGen(DynGen):
                              linear_scaling_on_demand="yes", ma57_pivtol=1e-12,
                              output_file="dummy_ip.log")
                 if tst1 != 0:
-                    print("Too bad :( Exit fe initialization, good luck!", file=sys.stderr)
+                    print("Too bad :( Exit fe initialization, best of luck m8!", file=sys.stderr)
                 k_notopt += 1
             #: Patch
             if tst1 != 0:
+                #: At this point we break the fe_by_fe initialization to try to solve the full problem with the current
+                #: values
                 break
             else:
                 for i in range(finite_elem, self.nfe_tnmpc):
