@@ -5,7 +5,7 @@ from __future__ import division
 
 from pyomo.core.base import Var, Objective, minimize, value, Set, Constraint, Expression, Param, Suffix
 from pyomo.opt import SolverFactory, ProblemFormat, SolverStatus, TerminationCondition
-from nmpc_mhe.dync.DynGen import DynGen
+from nmpc_mhe.dync.old.DynGen import DynGen
 import numpy as np
 import sys, os, time
 from six import iterkeys

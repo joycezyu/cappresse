@@ -2,8 +2,9 @@ from __future__ import print_function
 from pyomo.environ import *
 from pyomo.core.base import Constraint, Objective, Suffix, minimize
 from pyomo.opt import ProblemFormat, SolverFactory
-from nmpc_mhe.dync.MHEGen2__obsolete import MheGen
-from nmpc_mhe.mods.bfb.nob4 import bfb_dae
+from nmpc_mhe.dync.old.MHEGen2__obsolete import MheGen
+# from nmpc_mhe.dync.MHEGenv2 import MheGen
+from sample_mods.bfb.nob4 import bfb_dae
 from snap_shot import snap
 import sys, os
 import itertools, sys
@@ -231,7 +232,7 @@ f.close()
 e.d1.dum_of = Objective(expr=1,sense=minimize)
 e.d1.write_nl(name="whatevs0.nl")
 kaug = SolverFactory("k_aug",
-                     executable="/home/dav0/k2/KKT_matrix/src/kmatrix/k_aug")
+                     executable="/home/dav0/devzone/k_aug/bin/k_aug")
 kaug.options["compute_dsdp"] = ""
 f = open("suf1.txt", "w")
 e.d1.var_order.pprint(ostream=f)
